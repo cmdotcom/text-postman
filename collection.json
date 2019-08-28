@@ -1,0 +1,894 @@
+{
+	"info": {
+		"_postman_id": "4d8a1a01-d6ad-47d3-83e5-1b5c5a101047",
+		"name": "Business Messaging API",
+		"description": "A Postman collection of CM's Business Messaging API.\n\n\nOfficial API documentation: https://docs.cmtelecom.com/en/api/business-messaging-api/1.0/index/\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "v1.0",
+			"item": [
+				{
+					"name": "SMS",
+					"item": [
+						{
+							"name": "send a message, without worring about multipart or encoding",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"alowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "This API enables you to send text messages to mobile phones all around the world in very high volume.\nThe Messaging Gateway API covers the interface between your application and the CM Platform by means of the HTTP protocol. \nOnly bulk (free of charge for the end user) text messages are supported."
+							},
+							"response": []
+						},
+						{
+							"name": "send a message, with a custom grouping",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"customGrouping\": \"{{Grouping}}\",\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "This API enables you to send text messages to mobile phones all around the world in very high volume.\nThe Messaging Gateway API covers the interface between your application and the CM Platform by means of the HTTP protocol. \nOnly bulk (free of charge for the end user) text messages are supported."
+							},
+							"response": []
+						},
+						{
+							"name": "send a message to multiple recipients, without worring about multipart or encoding",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    },\n                    {\n                        \"number\": \"{{Recipient2}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \" SMS\"\n                ]\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "This API enables you to send text messages to mobile phones all around the world in very high volume.\nThe Messaging Gateway API covers the interface between your application and the CM Platform by means of the HTTP protocol. \nOnly bulk (free of charge for the end user) text messages are supported."
+							},
+							"response": []
+						},
+						{
+							"name": "simple gsm encoded message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a message, which can become a multipart or unicode message"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "WhatsApp",
+					"item": [
+						{
+							"name": "plain text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a WhatsApp message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ]\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "url inside text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a WhatsApp message with a url https://www.cm.com\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ]\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "formatted message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a fallback message for multichannel capabilities\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"A text message with linebreaks\\n *bold* _italic_   ~strike~-through and ```some code``` formatting\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "image message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "video message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example video\",\n                                \"mediaUri\": \"http://techslides.com/demos/sample-videos/small.mp4\",\n                                \"mimeType\": \"video/mp4\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "document message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example document\",\n                                \"mediaUri\": \"http://mobitainmentdemo.co.za/MobiChatbot/Brochure.pdf\",\n                                \"mimeType\": \"document/pdf\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "audio message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaUri\": \"https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Example.ogg/Example.ogg.mp3\",\n                                \"mimeType\": \"audio/mp3\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "location message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"location\": {\n                                \"latitude\": \"51.603802\",\n                                \"longitude\": \"4.770821\",\n                                \"label\": \"CM HQ\",\n                                \"searchQuery\": \"Konijnenberg 30\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "contact message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"My contact information is:\"\n                        },\n                        {\n                            \"contacts\": [\n                                {\n                                    \"addresses\": [\n                                        {\n                                            \"city\": \"Menlo Park\",\n                                            \"country\": \"United States\",\n                                            \"country_code\": \"us\",\n                                            \"state\": \"CA\",\n                                            \"street\": \"1 Hacker Way\",\n                                            \"type\": \"HOME\",\n                                            \"zip\": \"94025\"\n                                        },\n                                        {\n                                            \"city\": \"Menlo Park\",\n                                            \"country\": \"United States\",\n                                            \"country_code\": \"us\",\n                                            \"state\": \"CA\",\n                                            \"street\": \"200 Jefferson Dr\",\n                                            \"type\": \"WORK\",\n                                            \"zip\": \"94025\"\n                                        }\n                                    ],\n                                    \"birthday\": \"2012-08-18\",\n                                    \"emails\": [\n                                        {\n                                            \"email\": \"test@fb.com\",\n                                            \"type\": \"WORK\"\n                                        },\n                                        {\n                                            \"email\": \"test@whatsapp.com\",\n                                            \"type\": \"WORK\"\n                                        }\n                                    ],\n                                    \"name\": {\n                                        \"formatted_name\": \"John Smith\",\n                                        \"last_name\": \"Smith\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "5 items message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Test1\",\n                            \"header\": \"Header demo\"\n                        },\n                        {\n                            \"text\": \"Test2\",\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        },\n                        {\n                            \"text\": \"https://cm.nl\"\n                        },\n                        {\n                            \"text\": \"Test4\"\n                        },\n                        {\n                            \"text\": \"Test5\"\n                        },\n                        {\n                            \"text\": \"Test6\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "WA template",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"template\": {\n                                \"whatsapp\": {\n                                    \"namespace\": \"{{WA_Namespace}}\",\n                                    \"element_name\": \"ticket\",\n                                    \"language\": {\n                                        \"policy\": \"fallback\",\n                                        \"code\": \"en_US\"\n                                    },\n                                    \"localizable_params\": [\n                                        {\n                                            \"default\": \"Name\"\n                                        },\n                                        {\n                                            \"default\": \"Order\"\n                                        },\n                                        {\n                                            \"default\": \"Order2\"\n                                        },\n                                        {\n                                            \"default\": \"https://cmtelecom.com\"\n                                        }\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "plain text message with SMS fallback",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"SMS\",\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"cm logo\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "REMEMBER TO OPEN CUSTOMER CARE WINDOW FIRST !"
+							},
+							"response": []
+						},
+						{
+							"name": "Error generating message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ]\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Viber",
+					"item": [
+						{
+							"name": "Sending Viber text",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Text message for Viber\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sending Viber multiple texts",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Text message 1 for Viber\"\n                        },\n                        {\n                            \"text\": \"Text message 2 for Viber\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sending Viber media and text",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        },\n                        {\n                            \"text\": \"Text message for Viber\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sending Viber media",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"messages\": {\r\n        \"authentication\": {\r\n            \"productToken\": \"{{ProductToken}}\"\r\n        },\r\n        \"msg\": [\r\n            {\r\n                \"from\": \"{{Sender}}\",\r\n                \"to\": [\r\n                    {\r\n                        \"number\": \"{{Recipient}}\"\r\n                    }\r\n                ],\r\n                \"allowedChannels\": [\r\n                    \"Viber\"\r\n                ],\r\n                \"body\": {\r\n                    \"content\": \"SMS fallback content\"\r\n                },\r\n                \"richContent\": {\r\n                    \"conversation\": [\r\n                        {\r\n                            \"media\": {\r\n                            \t\"mediaName\": \"An example image\",\r\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\r\n                                \"mimeType\": \"image/png\"\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sending Viber text, media and button",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"messages\": {\r\n        \"authentication\": {\r\n            \"productToken\": \"{{ProductToken}}\"\r\n        },\r\n        \"msg\": [\r\n            {\r\n                \"from\": \"{{Sender}}\",\r\n                \"to\": [\r\n                    {\r\n                        \"number\": \"{{Recipient}}\"\r\n                    }\r\n                ],\r\n                \"allowedChannels\": [\r\n                    \"Viber\"\r\n                ],\r\n                \"body\": {\r\n                    \"content\": \"SMS fallback content\"\r\n                },\r\n                \"richContent\": {\r\n                    \"conversation\": [\r\n                        {\r\n                            \"media\": {\r\n                            \t\"mediaName\": \"An example image\",\r\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\r\n                                \"mimeType\": \"image/png\"\r\n                            }\r\n                        }, {\r\n                        \t\"text\": \"Text message for Viber\"\r\n                        }\r\n                    ],\r\n                    \"suggestions\": [\r\n\t\t\t\t\t    {\r\n\t\t\t\t\t        \"action\": \"openurl\", \r\n\t\t\t\t\t        \"label\": \"Open URL\", \r\n\t\t\t\t\t        \"url\": \"https://cm.com\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Please note that sending a message containing only media and a button will be rejected by Viber"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			],
+			"description": "Folder for v1.0"
+		},
+		{
+			"name": "mo-webhooks",
+			"item": [
+				{
+					"name": "Incoming text message",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "38e71704-a740-474b-84c9-ab20e18ee262",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reference\": \"2f2d42ac-3809-40fb-bce5-dc720e400000\",\n    \"from\": {\n        \"number\": \"+316012345678\",\n        \"name\": \"\"\n    },\n    \"to\": {\n        \"number\": \"3669\"\n    },\n    \"message\": {\n        \"text\": \"This is an example message\",\n        \"media\": {\n            \"mediaUri\": \"\",\n            \"contentType\": \"\",\n            \"title\": \"\"\n        },\n        \"custom\": {}\n    },\n    \"groupings\": [\n        \"39373ce0-f4aa-4918-8ff1-3cef7f77b112\",\n        \"messagesApi\",\n        \"\"\n    ],\n    \"time\": \"2019-01-01 12:00:00\",\n    \"channel\": \"WhatsApp\"\n}"
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incoming media item",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7ce194cb-67bd-4485-a5d3-0383bd78c2f0",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reference\": \"2f2d42ac-3809-40fb-bce5-dc720e400000\",\n    \"from\": {\n        \"number\": \"+316012345678\",\n        \"name\": \"Demo\"\n    },\n    \"to\": {\n        \"number\": \"3669\"\n    },\n    \"message\": {\n        \"text\": \"\",\n        \"media\": {\n            \"mediaUri\": \"https://temp.com/adsadsa\",\n            \"contentType\": \"image/png\",\n            \"title\": \"Media items can be empty\"\n        },\n        \"custom\": {}\n    },\n    \"groupings\": [\n        \"39373ce0-f4aa-4918-8ff1-3cef7f77b112\",\n        \"messagesApi\",\n        \"\"\n    ],\n    \"time\": \"2019-01-01 12:00:00\",\n    \"channel\": \"WhatsApp\"\n}"
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incoming WhatsApp location",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "06d5bc8f-7dd2-44bb-9ffb-f11c4be121d6",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json; charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reference\": \"2f2d42ac-3809-40fb-bce5-dc720e400000\",\n    \"from\": {\n        \"number\": \"+316012345678\",\n        \"name\": \"Demo\"\n    },\n    \"to\": {\n        \"number\": \"+316012345678\"\n    },\n    \"message\": {\n        \"text\": \"\",\n        \"media\": {\n            \"mediaUri\": \"\",\n            \"contentType\": \"\",\n            \"title\": \"\"\n        },\n        \"custom\": {\n            \"location\": {\n                \"latitude\": 51.603802,\n                \"longitude\": 4.770821,\n                \"label\": \"CM HQ\",\n                \"searchQuery\": \"Konijnenberg 30\"\n            }\n        }\n    },\n    \"groupings\": [\n        \"39373ce0-f4aa-4918-8ff1-3cef7f77b112\",\n        \"messagesApi\",\n        \"\"\n    ],\n    \"time\": \"2019-01-01 12:00:00\",\n    \"channel\": \"WhatsApp\"\n}"
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Our incoming message webhooks, also known as inbound messages or MO (Mobile Oriented) messages.\n\nConfigure your application server as the request URL and send these messages to your server to emulate incoming message from our server\n\n- message keys are case-insensitive\n- ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ea2072b0-0042-4d10-a5fd-678191f9b795",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6974967d-e687-4ae0-aabe-0963420cf9e7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "23a58c66-541a-41d3-8a7e-04e248975dc5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a9763759-7336-4780-ac6a-44188dbda9cc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "ecb3a4aa-a001-4b56-aa61-e1743236388c",
+			"key": "ProductToken",
+			"value": "00000000-0000-0000-0000-000000000000",
+			"type": "string"
+		},
+		{
+			"id": "6ebc6550-b88c-48f3-8d4d-ac7fce4cefae",
+			"key": "Recipient",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "727dbb76-bea6-48cb-b47b-e7327f21d8d3",
+			"key": "Recipient2",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "db3f6bd4-ee55-421f-b74f-12cec2669029",
+			"key": "Sender",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
