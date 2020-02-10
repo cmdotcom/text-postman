@@ -216,7 +216,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a fallback message for multichannel capabilities\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"A text message with linebreaks\\n *bold* _italic_   ~strike~-through and ```some code``` formatting\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a fallback message for multichannel capabilities\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"A text message with linebreaks\\n *bold* _italic_   ~strike~-through and ```some code``` formatting in a speech bubble.\"\n                        },\n                        {\n                            \"text\": \"Another speech bubble\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -247,7 +247,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -278,7 +278,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example video\",\n                                \"mediaUri\": \"http://techslides.com/demos/sample-videos/small.mp4\",\n                                \"mimeType\": \"video/mp4\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example video\",\n                                \"mediaUri\": \"http://techslides.com/demos/sample-videos/small.mp4\",\n                                \"mimeType\": \"video/mp4\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -309,7 +309,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example document\",\n                                \"mediaUri\": \"http://mobitainmentdemo.co.za/MobiChatbot/Brochure.pdf\",\n                                \"mimeType\": \"document/pdf\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example document\",\n                                \"mediaUri\": \"http://mobitainmentdemo.co.za/MobiChatbot/Brochure.pdf\",\n                                \"mimeType\": \"document/pdf\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -340,7 +340,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaUri\": \"https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Example.ogg/Example.ogg.mp3\",\n                                \"mimeType\": \"audio/mp3\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaUri\": \"https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Example.ogg/Example.ogg.mp3\",\n                                \"mimeType\": \"audio/mp3\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -371,7 +371,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"location\": {\n                                \"latitude\": \"51.603802\",\n                                \"longitude\": \"4.770821\",\n                                \"label\": \"CM HQ\",\n                                \"searchQuery\": \"Konijnenberg 30\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"location\": {\n                                \"latitude\": \"51.603802\",\n                                \"longitude\": \"4.770821\",\n                                \"label\": \"CM HQ\",\n                                \"searchQuery\": \"Konijnenberg 30\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -402,7 +402,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"My contact information is:\"\n                        },\n                        {\n                            \"contacts\": [\n                                {\n                                    \"addresses\": [\n                                        {\n                                            \"city\": \"Menlo Park\",\n                                            \"country\": \"United States\",\n                                            \"country_code\": \"us\",\n                                            \"state\": \"CA\",\n                                            \"street\": \"1 Hacker Way\",\n                                            \"type\": \"HOME\",\n                                            \"zip\": \"94025\"\n                                        },\n                                        {\n                                            \"city\": \"Menlo Park\",\n                                            \"country\": \"United States\",\n                                            \"country_code\": \"us\",\n                                            \"state\": \"CA\",\n                                            \"street\": \"200 Jefferson Dr\",\n                                            \"type\": \"WORK\",\n                                            \"zip\": \"94025\"\n                                        }\n                                    ],\n                                    \"birthday\": \"2012-08-18\",\n                                    \"emails\": [\n                                        {\n                                            \"email\": \"test@fb.com\",\n                                            \"type\": \"WORK\"\n                                        },\n                                        {\n                                            \"email\": \"test@whatsapp.com\",\n                                            \"type\": \"WORK\"\n                                        }\n                                    ],\n                                    \"name\": {\n                                        \"formatted_name\": \"John Smith\",\n                                        \"last_name\": \"Smith\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"My contact information is:\"\n                        },\n                        {\n                            \"contacts\": [\n                                {\n                                    \"addresses\": [\n                                        {\n                                            \"city\": \"Menlo Park\",\n                                            \"country\": \"United States\",\n                                            \"country_code\": \"us\",\n                                            \"state\": \"CA\",\n                                            \"street\": \"1 Hacker Way\",\n                                            \"type\": \"HOME\",\n                                            \"zip\": \"94025\"\n                                        },\n                                        {\n                                            \"city\": \"Menlo Park\",\n                                            \"country\": \"United States\",\n                                            \"country_code\": \"us\",\n                                            \"state\": \"CA\",\n                                            \"street\": \"200 Jefferson Dr\",\n                                            \"type\": \"WORK\",\n                                            \"zip\": \"94025\"\n                                        }\n                                    ],\n                                    \"birthday\": \"2012-08-18\",\n                                    \"emails\": [\n                                        {\n                                            \"email\": \"test@fb.com\",\n                                            \"type\": \"WORK\"\n                                        },\n                                        {\n                                            \"email\": \"test@whatsapp.com\",\n                                            \"type\": \"WORK\"\n                                        }\n                                    ],\n                                    \"name\": {\n                                        \"formatted_name\": \"John Smith\",\n                                        \"last_name\": \"Smith\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -433,7 +433,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Test1\",\n                            \"header\": \"Header demo\"\n                        },\n                        {\n                            \"text\": \"Test2\",\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        },\n                        {\n                            \"text\": \"https://cm.nl\"\n                        },\n                        {\n                            \"text\": \"Test4\"\n                        },\n                        {\n                            \"text\": \"Test5\"\n                        },\n                        {\n                            \"text\": \"Test6\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Test1\",\n                            \"header\": \"Header demo\"\n                        },\n                        {\n                            \"text\": \"Test2\",\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        },\n                        {\n                            \"text\": \"https://cm.nl\"\n                        },\n                        {\n                            \"text\": \"Test4\"\n                        },\n                        {\n                            \"text\": \"Test5\"\n                        },\n                        {\n                            \"text\": \"Test6\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -453,7 +453,7 @@
 							"response": []
 						},
 						{
-							"name": "WA template",
+							"name": "template message",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -464,7 +464,37 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"template\": {\n                                \"whatsapp\": {\n                                    \"namespace\": \"{{WA_Namespace}}\",\n                                    \"element_name\": \"ticket\",\n                                    \"language\": {\n                                        \"policy\": \"deterministic\",\n                                        \"code\": \"en_US\"\n                                    },\n                                    \"localizable_params\": [\n                                        {\n                                            \"default\": \"Name\"\n                                        },\n                                        {\n                                            \"default\": \"Order\"\n                                        },\n                                        {\n                                            \"default\": \"Order2\"\n                                        },\n                                        {\n                                            \"default\": \"https://cmtelecom.com\"\n                                        }\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"template\": {\n                                \"whatsapp\": {\n                                    \"namespace\": \"{{WA_Namespace}}\",\n                                    \"element_name\": \"ticket\",\n                                    \"language\": {\n                                        \"policy\": \"deterministic\",\n                                        \"code\": \"en\"\n                                    },\n                                    \"localizable_params\": [\n                                        {\n                                            \"default\": \"Name\"\n                                        },\n                                        {\n                                            \"default\": \"Order\"\n                                        },\n                                        {\n                                            \"default\": \"Order2\"\n                                        }\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"cmtelecom",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "media template message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"template\": {\n                                \"whatsapp\": {\n                                    \"namespace\": \"{{WA_Namespace}}\",\n                                    \"element_name\": \"media_ticket\",\n                                    \"language\": {\n                                        \"policy\": \"deterministic\",\n                                        \"code\": \"en\"\n                                    },\n                                    \"components\": [\n                                        {\n                                            \"type\": \"header\",\n                                            \"parameters\": [\n                                                {\n                                                    \"type\": \"image\",\n                                                    \"media\": {\n                                                        \"mediaName\": \"Vind je dit wellicht leuk?\",\n                                                        \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                                        \"mimeType\": \"image/png\"\n                                                    }\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"type\": \"body\",\n                                            \"parameters\": [\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Name\"\n                                                },\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Dutch GP\"\n                                                }\n                                            ]\n                                        }\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -737,7 +767,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"reference\": \"2f2d42ac-3809-40fb-bce5-dc720e400000\",\n    \"from\": {\n        \"number\": \"+316012345678\",\n        \"name\": \"\"\n    },\n    \"to\": {\n        \"number\": \"3669\"\n    },\n    \"message\": {\n        \"text\": \"This is an example message\",\n        \"media\": {\n            \"mediaUri\": \"\",\n            \"contentType\": \"\",\n            \"title\": \"\"\n        },\n        \"custom\": {}\n    },\n    \"groupings\": [\n        \"39373ce0-f4aa-4918-8ff1-3cef7f77b112\",\n        \"messagesApi\",\n        \"\"\n    ],\n    \"time\": \"2019-01-01 12:00:00\",\n    \"channel\": \"WhatsApp\"\n}"
+							"raw": "{\n    \"reference\": \"2f2d42ac-3809-40fb-bce5-dc720e400000\",\n    \"from\": {\n        \"number\": \"+316012345678\",\n        \"name\": \"\"\n    },\n    \"to\": {\n        \"number\": \"3669\"\n    },\n    \"message\": {\n        \"text\": \"This is an example message\",\n        \"media\": {\n            \"mediaUri\": \"\",\n            \"contentType\": \"\",\n            \"title\": \"\"\n        },\n        \"custom\": {}\n    },\n    \"groupings\": [\n        \"39373ce0-f4aa-4918-8ff1-3cef7f77b112\",\n        \"messagesApi\",\n        \"\"\n    ],\n    \"timeUtc\": \"2019-01-01T12:00:00\",\n    \"channel\": \"WhatsApp\"\n}"
 						},
 						"url": {
 							"raw": ""
@@ -773,7 +803,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"reference\": \"2f2d42ac-3809-40fb-bce5-dc720e400000\",\n    \"from\": {\n        \"number\": \"+316012345678\",\n        \"name\": \"Demo\"\n    },\n    \"to\": {\n        \"number\": \"3669\"\n    },\n    \"message\": {\n        \"text\": \"\",\n        \"media\": {\n            \"mediaUri\": \"https://temp.com/adsadsa\",\n            \"contentType\": \"image/png\",\n            \"title\": \"Media items can be empty\"\n        },\n        \"custom\": {}\n    },\n    \"groupings\": [\n        \"39373ce0-f4aa-4918-8ff1-3cef7f77b112\",\n        \"messagesApi\",\n        \"\"\n    ],\n    \"time\": \"2019-01-01 12:00:00\",\n    \"channel\": \"WhatsApp\"\n}"
+							"raw": "{\n    \"reference\": \"2f2d42ac-3809-40fb-bce5-dc720e400000\",\n    \"from\": {\n        \"number\": \"+316012345678\",\n        \"name\": \"Demo\"\n    },\n    \"to\": {\n        \"number\": \"0031612345678\"\n    },\n    \"message\": {\n        \"text\": \"\",\n        \"media\": {\n            \"mediaUri\": \"https://temp.com/adsadsa\",\n            \"contentType\": \"image/png\",\n            \"title\": \"Media items can be empty\"\n        },\n        \"custom\": {}\n    },\n    \"groupings\": [\n        \"39373ce0-f4aa-4918-8ff1-3cef7f77b112\",\n        \"messagesApi\",\n        \"\"\n    ],\n    \"timeUtc\": \"2019-01-01T12:00:00\",\n    \"channel\": \"WhatsApp\"\n}"
 						},
 						"url": {
 							"raw": ""
@@ -809,7 +839,43 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"reference\": \"2f2d42ac-3809-40fb-bce5-dc720e400000\",\n    \"from\": {\n        \"number\": \"+316012345678\",\n        \"name\": \"Demo\"\n    },\n    \"to\": {\n        \"number\": \"+316012345678\"\n    },\n    \"message\": {\n        \"text\": \"\",\n        \"media\": {\n            \"mediaUri\": \"\",\n            \"contentType\": \"\",\n            \"title\": \"\"\n        },\n        \"custom\": {\n            \"location\": {\n                \"latitude\": 51.603802,\n                \"longitude\": 4.770821,\n                \"label\": \"CM HQ\",\n                \"searchQuery\": \"Konijnenberg 30\"\n            }\n        }\n    },\n    \"groupings\": [\n        \"39373ce0-f4aa-4918-8ff1-3cef7f77b112\",\n        \"messagesApi\",\n        \"\"\n    ],\n    \"time\": \"2019-01-01 12:00:00\",\n    \"channel\": \"WhatsApp\"\n}"
+							"raw": "{\n    \"reference\": \"2f2d42ac-3809-40fb-bce5-dc720e400000\",\n    \"from\": {\n        \"number\": \"+316012345678\",\n        \"name\": \"Demo\"\n    },\n    \"to\": {\n        \"number\": \"00316012345678\"\n    },\n    \"message\": {\n        \"text\": \"\",\n        \"media\": {\n            \"mediaUri\": \"\",\n            \"contentType\": \"\",\n            \"title\": \"\"\n        },\n        \"custom\": {\n            \"location\": {\n                \"latitude\": 51.603802,\n                \"longitude\": 4.770821,\n                \"label\": \"CM HQ\",\n                \"searchQuery\": \"Konijnenberg 30\"\n            }\n        }\n    },\n    \"groupings\": [\n        \"39373ce0-f4aa-4918-8ff1-3cef7f77b112\",\n        \"messagesApi\",\n        \"\"\n    ],\n    \"timeUtc\": \"2019-01-01T12:00:00\",\n    \"channel\": \"WhatsApp\"\n}"
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Incoming WhatsApp contact",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "06d5bc8f-7dd2-44bb-9ffb-f11c4be121d6",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json; charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reference\": \"2f2d42ac-3809-40fb-bce5-dc720e400000\",\n    \"from\": {\n        \"number\": \"+316012345678\",\n        \"name\": \"Demo\"\n    },\n    \"to\": {\n        \"number\": \"00316012345678\"\n    },\n    \"message\": {\n        \"text\": \"\",\n        \"media\": {\n            \"mediaUri\": \"\",\n            \"contentType\": \"\",\n            \"title\": \"\"\n        },\n        \"custom\": {\n            \"contacts\": [\n                {\n                    \"addresses\": [\n                        {\n                            \"city\": \"Breda\",\n                            \"country\": \"Netherlands\",\n                            \"country_code\": \"NL\",\n                            \"street\": \"Konijnenberg 30\",\n                            \"type\": \"WORK\",\n                            \"zip\": \"4825 BD\"\n                        }\n                    ],\n                    \"name\": {\n                        \"formatted_name\": \"CM Developer\",\n                        \"last_name\": \"Your last name\"\n                    }\n                }\n            ]\n        }\n    },\n    \"groupings\": [\n        \"39373ce0-f4aa-4918-8ff1-3cef7f77b112\",\n        \"messagesApi\",\n        \"\"\n    ],\n    \"timeUtc\": \"2019-01-01T12:00:00\",\n    \"channel\": \"WhatsApp\"\n}"
 						},
 						"url": {
 							"raw": ""
@@ -867,27 +933,27 @@
 	],
 	"variable": [
 		{
-			"id": "ecb3a4aa-a001-4b56-aa61-e1743236388c",
+			"id": "ed172a93-09c6-4669-b5d3-277ce6935a96",
 			"key": "ProductToken",
 			"value": "00000000-0000-0000-0000-000000000000",
 			"type": "string"
 		},
 		{
-			"id": "6ebc6550-b88c-48f3-8d4d-ac7fce4cefae",
+			"id": "21f04d1a-2c20-41fc-9f0f-454578cd943c",
 			"key": "Recipient",
-			"value": "",
+			"value": "00316123456789",
 			"type": "string"
 		},
 		{
-			"id": "727dbb76-bea6-48cb-b47b-e7327f21d8d3",
+			"id": "7a005ac8-43fe-433b-b48e-64f6d76a2782",
 			"key": "Recipient2",
-			"value": "",
+			"value": "00316123456789",
 			"type": "string"
 		},
 		{
-			"id": "db3f6bd4-ee55-421f-b74f-12cec2669029",
+			"id": "81cacd2b-753e-4072-9b77-7339cd3db023",
 			"key": "Sender",
-			"value": "",
+			"value": "00316123456789",
 			"type": "string"
 		}
 	]
