@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4d8a1a01-d6ad-47d3-83e5-1b5c5a101047",
+		"_postman_id": "5540dce1-a05e-4af8-9cb1-67d00bf731b0",
 		"name": "Business Messaging API",
 		"description": "A Postman collection of CM's Business Messaging API.\n\n\nOfficial API documentation: https://docs.cmtelecom.com/en/api/business-messaging-api/1.0/index/\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -137,6 +137,7 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
 				{
@@ -464,7 +465,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"template\": {\n                                \"whatsapp\": {\n                                    \"namespace\": \"{{WA_Namespace}}\",\n                                    \"element_name\": \"ticket\",\n                                    \"language\": {\n                                        \"policy\": \"deterministic\",\n                                        \"code\": \"en\"\n                                    },\n                                    \"localizable_params\": [\n                                        {\n                                            \"default\": \"Name\"\n                                        },\n                                        {\n                                            \"default\": \"Order\"\n                                        },\n                                        {\n                                            \"default\": \"Order2\"\n                                        }\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"template\": {\n                                \"whatsapp\": {\n                                    \"namespace\": \"{{WA_Namespace}}\",\n                                    \"element_name\": \"ticket\",\n                                    \"language\": {\n                                        \"policy\": \"deterministic\",\n                                        \"code\": \"en\"\n                                    },\n                                    \"components\": [\n                                        {\n                                            \"type\": \"body\",\n                                            \"parameters\": [\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Name\"\n                                                },\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Order\"\n                                                },\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Order2\"\n                                                }\n                                            ]\n                                        }\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -574,6 +575,7 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
 				{
@@ -731,10 +733,12 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				}
 			],
-			"description": "Folder for v1.0"
+			"description": "Folder for v1.0",
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "mo-webhooks",
@@ -745,7 +749,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "38e71704-a740-474b-84c9-ab20e18ee262",
+								"id": "bc6b7cb4-1f31-448e-bf10-35f61f08eec1",
 								"exec": [
 									"pm.test(\"Successful POST request\", function () {",
 									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
@@ -781,7 +785,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7ce194cb-67bd-4485-a5d3-0383bd78c2f0",
+								"id": "ea19d066-2d10-43db-9b50-4c92114727da",
 								"exec": [
 									"pm.test(\"Successful POST request\", function () {",
 									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
@@ -817,7 +821,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "06d5bc8f-7dd2-44bb-9ffb-f11c4be121d6",
+								"id": "90cb50b8-dbf6-4870-a21e-e97b3947516a",
 								"exec": [
 									"pm.test(\"Successful POST request\", function () {",
 									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
@@ -853,7 +857,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "06d5bc8f-7dd2-44bb-9ffb-f11c4be121d6",
+								"id": "820faab4-09ef-4788-bf8f-cd05e4d32e5e",
 								"exec": [
 									"pm.test(\"Successful POST request\", function () {",
 									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
@@ -889,7 +893,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ea2072b0-0042-4d10-a5fd-678191f9b795",
+						"id": "9dd28f7b-e071-48bc-b73d-775b8840791b",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -899,21 +903,22 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6974967d-e687-4ae0-aabe-0963420cf9e7",
+						"id": "f65a0909-28e5-4943-a831-56d9426966a3",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "23a58c66-541a-41d3-8a7e-04e248975dc5",
+				"id": "27e00b22-6e50-4be5-b283-df48663e631f",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -923,7 +928,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a9763759-7336-4780-ac6a-44188dbda9cc",
+				"id": "1dbae18d-7077-4872-9c53-d472d5f93c52",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -956,5 +961,6 @@
 			"value": "00316123456789",
 			"type": "string"
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
