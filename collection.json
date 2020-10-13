@@ -13,7 +13,7 @@
 					"name": "SMS",
 					"item": [
 						{
-							"name": "send a message, without worring about multipart or encoding",
+							"name": "send a message, without worrying about multipart or encoding",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -24,7 +24,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"alowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
 								},
 								"url": {
 									"raw": "https://gw.cmtelecom.com/v1.0/message",
@@ -75,7 +75,7 @@
 							"response": []
 						},
 						{
-							"name": "send a message to multiple recipients, without worring about multipart or encoding",
+							"name": "send a message to multiple recipients, without worrying about multipart or encoding",
 							"request": {
 								"method": "POST",
 								"header": [
