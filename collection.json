@@ -850,6 +850,119 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
+				},
+				{
+					"name": "RCS",
+					"item": [
+						{
+							"name": "RCS text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"RCS\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback text\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"A RCS text message\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain RCS text message. Falls back to the body content on devices without RCS."
+							},
+							"response": []
+						},
+						{
+							"name": "RCS image message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"RCS\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaHeight\": \"medium\",\n                                \"mediaName\": \"cm.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an image over RCS. mediaHeight can be small, medium or tall."
+							},
+							"response": []
+						},
+						{
+							"name": "RCS rich card with suggestions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"RCS\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"header\": \"CM.com wants to reach out to you.\",\n                            \"text\": \"We hope you like it!\",\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"OpenUrl\",\n                                    \"label\": \"Go to website\",\n                                    \"url\": \"https://www.cm.com\",\n                                    \"postbackdata\": \"Click on website\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an RCS rich card that combines a header, body text and up to four suggested replies/actions."
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"description": "Folder for v1.0",
