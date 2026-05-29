@@ -1859,6 +1859,129 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "sr-webhooks",
+			"item": [
+				{
+					"name": "SMS delivered (JSON)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messages\": {\n        \"msg\": {\n            \"received\": \"2026-05-29T10:15:23\",\n            \"to\": \"00447911123456\",\n            \"reference\": \"your_reference_A\",\n            \"status\": {\n                \"code\": 2,\n                \"errorCode\": 0,\n                \"errorDescription\": \"Message delivered\"\n            },\n            \"operator\": \"Vodafone UK\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "",
+						"description": "Delivery confirmation for an SMS (status code 2 = delivered). The reference matches what you set in the original outbound message."
+					},
+					"response": []
+				},
+				{
+					"name": "SMS failed - invalid number (JSON)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messages\": {\n        \"msg\": {\n            \"received\": \"2026-05-29T10:15:23\",\n            \"to\": \"0044791112345a\",\n            \"reference\": \"your_reference_B\",\n            \"status\": {\n                \"code\": 3,\n                \"errorCode\": 23,\n                \"errorDescription\": \"Message not delivered because of an incorrect recipient number\"\n            },\n            \"operator\": \"Vodafone UK\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "",
+						"description": "Failure SR for an SMS (status code 3 = failed) with standard error code 23 (invalid/blacklisted/barred recipient)."
+					},
+					"response": []
+				},
+				{
+					"name": "WhatsApp read (JSON)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messages\": {\n        \"msg\": {\n            \"received\": \"2026-05-29T10:15:23\",\n            \"to\": \"00316012345678\",\n            \"reference\": \"your_reference_C\",\n            \"status\": {\n                \"code\": 4,\n                \"errorCode\": 0,\n                \"errorDescription\": \"Message read\"\n            },\n            \"operator\": \"WhatsApp\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "",
+						"description": "Read receipt for a WhatsApp message (status code 4 = read). Read is only emitted by channels other than SMS, and implies the message was also delivered."
+					},
+					"response": []
+				},
+				{
+					"name": "SMS delivered (XML)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml; charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<MESSAGES>\n\t<MSG RECEIVED=\"2026-05-29T10:15:23\">\n\t\t<TO>00447911123456</TO>\n\t\t<REFERENCE>your_reference_A</REFERENCE>\n\t\t<STATUS>\n\t\t\t<CODE>2</CODE>\n\t\t\t<ERRORCODE>0</ERRORCODE>\n\t\t\t<ERRORDESCRIPTION>Message delivered</ERRORDESCRIPTION>\n\t\t</STATUS>\n\t</MSG>\n</MESSAGES>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "",
+						"description": "Delivery confirmation in XML format. The status report webhook can be configured per account to deliver in JSON or XML."
+					},
+					"response": []
+				}
+			],
+			"description": "Our status report webhooks, also known as SRs or delivery reports.\n\nConfigure your application server as the request URL and send these messages to your server to emulate a status update coming from our server.\n\nStatus codes:\n- 0: accepted by the operator\n- 1: rejected by CM or the operator\n- 2: delivered\n- 3: failed (not, and will not be, delivered)\n- 4: read (channels other than SMS)\n\nStandard error codes (status.errorCode) are documented at https://developers.cm.com/messaging/docs/incoming-status-report",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
