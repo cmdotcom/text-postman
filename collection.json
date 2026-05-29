@@ -1189,6 +1189,119 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Instagram Messaging",
+					"item": [
+						{
+							"name": "Instagram text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Instagram\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"CM.com - Be part of it.\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text Instagram message. `from` is the Instagram Account ID, `to.number` is the recipient's IGSID."
+							},
+							"response": []
+						},
+						{
+							"name": "Instagram quick reply",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Instagram\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Hi, what can I do for you?\",\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Call me\",\n                                    \"postbackdata\": \"CALL\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\",\n                                    \"postbackdata\": \"EMAIL\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\",\n                                    \"postbackdata\": \"SMS\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an Instagram message with quick reply buttons. Only visible in the Instagram app, not the web client."
+							},
+							"response": []
+						},
+						{
+							"name": "Instagram rich card (generic template)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Instagram\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"header\": \"We are CM.com!\",\n                            \"text\": \"Visit our website or start a chat with one of our employees!\",\n                            \"media\": {\n                                \"mediaUri\": \"https://www.cm.com/cdn/web/en/small/connect-test.png\"\n                            },\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"OpenUrl\",\n                                    \"label\": \"Visit our website!\",\n                                    \"url\": \"https://cm.com\",\n                                    \"postbackdata\": \"VISIT_WEBSITE\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"I want to chat!\",\n                                    \"postbackdata\": \"HUMAN_AGENT\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an Instagram generic template (rich card). The `HUMAN_AGENT` postbackdata triggers the handover protocol if configured."
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"description": "Folder for v1.0",
