@@ -1605,6 +1605,83 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Mobile Push",
+					"item": [
+						{
+							"name": "Push text with SMS fallback",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"allowedChannels\": [\n                    \"MobilePush\",\n                    \"SMS\"\n                ],\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is the content of my push message.\"\n                },\n                \"appkey\": \"{{AppKey}}\"\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Mobile Push message with SMS fallback. `appkey` is the channel account id provided during onboarding."
+							},
+							"response": []
+						},
+						{
+							"name": "Push rich card (CMPush V2 SDK only)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"allowedChannels\": [\n                    \"MobilePush\"\n                ],\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"appkey\": \"{{AppKey}}\",\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"header\": \"Contact options\",\n                            \"text\": \"Hi, what can I do for you?\",\n                            \"media\": {\n                                \"mediaName\": \"cm.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            },\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Call me\",\n                                    \"postbackdata\": \"call-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\",\n                                    \"postbackdata\": \"email-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\",\n                                    \"postbackdata\": \"send-me-sms\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Mobile Push rich card with media and reply suggestions. Requires the CMPush V2 SDK on the receiving device."
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"description": "Folder for v1.0",
