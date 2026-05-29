@@ -1076,6 +1076,119 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Facebook Messenger",
+					"item": [
+						{
+							"name": "FBM text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Facebook Messenger\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"CM.com - Be part of it.\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text Facebook Messenger message. `from` is the Page ID, `to.number` is the recipient's PSID."
+							},
+							"response": []
+						},
+						{
+							"name": "FBM quick reply",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Facebook Messenger\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Hi, what can I do for you?\",\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Call me\",\n                                    \"postbackdata\": \"CALL\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\",\n                                    \"postbackdata\": \"EMAIL\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\",\n                                    \"postbackdata\": \"SMS\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Facebook Messenger message with quick reply buttons."
+							},
+							"response": []
+						},
+						{
+							"name": "FBM generic template (rich card)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Facebook Messenger\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"carousel\": {\n                                \"cards\": [\n                                    {\n                                        \"header\": \"CM.com - Be part of it.\",\n                                        \"text\": \"Want to know more about CM.com?\",\n                                        \"media\": {\n                                            \"mediaName\": \"cm.png\",\n                                            \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                            \"mimeType\": \"image/png\"\n                                        },\n                                        \"suggestions\": [\n                                            {\n                                                \"action\": \"Reply\",\n                                                \"label\": \"Give me more info\",\n                                                \"postbackdata\": \"INFO\"\n                                            },\n                                            {\n                                                \"action\": \"OpenUrl\",\n                                                \"label\": \"Visit CM.com\",\n                                                \"url\": \"https://www.cm.com/\"\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Facebook Messenger generic template (rich card) with a header, body, image and up to 3 buttons."
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"description": "Folder for v1.0",
