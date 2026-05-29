@@ -1302,6 +1302,119 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Google Business Messages",
+					"item": [
+						{
+							"name": "GBM text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Google Business Messages\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"CM.com - Be part of it.\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text Google Business Messages message. `from` is the Agent ID, `to.number` is the Conversation ID."
+							},
+							"response": []
+						},
+						{
+							"name": "GBM quick reply suggestions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Google Business Messages\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Hi, what can I do for you?\",\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Call me\",\n                                    \"postbackdata\": \"call-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\",\n                                    \"postbackdata\": \"email-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\",\n                                    \"postbackdata\": \"send-me-sms\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Google Business Messages message with quick reply suggestions (max 13)."
+							},
+							"response": []
+						},
+						{
+							"name": "GBM rich card with reply suggestions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Google Business Messages\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"header\": \"Contact options\",\n                            \"text\": \"Hi, what can I do for you?\",\n                            \"media\": {\n                                \"mediaName\": \"connect.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/web/en/small/connect-test.png\",\n                                \"mimeType\": \"image/png\"\n                            },\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Call me\",\n                                    \"postbackdata\": \"call-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\",\n                                    \"postbackdata\": \"email-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\",\n                                    \"postbackdata\": \"send-me-sms\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Google Business Messages rich card with media and reply suggestions (max 4 suggestions per card)."
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"description": "Folder for v1.0",
