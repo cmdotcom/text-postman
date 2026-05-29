@@ -1,0 +1,50 @@
+{
+	"id": "cd1f5c7a-7ab2-4a3a-b1ad-1e4b0c5d6e7f",
+	"name": "CM Business Messaging API",
+	"values": [
+		{
+			"key": "ProductToken",
+			"value": "",
+			"type": "secret",
+			"enabled": true
+		},
+		{
+			"key": "Sender",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "Recipient",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "Recipient2",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "Grouping",
+			"value": "Campaign ABC",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "WA_Namespace",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "AppKey",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_using": "text-postman"
+}
