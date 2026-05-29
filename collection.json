@@ -963,6 +963,119 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Apple Messages for Business",
+					"item": [
+						{
+							"name": "AMB text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Apple Messages for Business\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Be part of it.\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text Apple Messages for Business message. `from` is the Business Account ID, `to.number` is the Conversation ID."
+							},
+							"response": []
+						},
+						{
+							"name": "AMB list picker",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Apple Messages for Business\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Which product would you like more info about?\",\n                            \"listpicker\": {\n                                \"options\": [\n                                    {\n                                        \"label\": \"Communication Platform as a Service\"\n                                    },\n                                    {\n                                        \"label\": \"Mobile Marketing Cloud (MMC)\"\n                                    },\n                                    {\n                                        \"label\": \"Mobile Service Cloud (MSC)\"\n                                    },\n                                    {\n                                        \"label\": \"Conversational AI Cloud\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an Apple Messages for Business list picker so the user can pick from preset options."
+							},
+							"response": []
+						},
+						{
+							"name": "AMB OpenUrl with preview",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Apple Messages for Business\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Visit our website\",\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"OpenUrl\",\n                                    \"label\": \"CM.com - Be part of it.\",\n                                    \"url\": \"https://www.cm.com/products/talk/\",\n                                    \"media\": {\n                                        \"mediaName\": \"cm-com.png\",\n                                        \"mediaUri\": \"https://www.cm.com/cdn/cm/cm-com.png\",\n                                        \"mimeType\": \"image/png\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an Apple Messages for Business OpenUrl suggestion with an inline preview image."
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"description": "Folder for v1.0",
