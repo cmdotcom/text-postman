@@ -1415,6 +1415,119 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "LINE",
+					"item": [
+						{
+							"name": "LINE text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Line\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"CM.com - Be part of it.\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text LINE message. `from` is your LINE user id, `to.number` is the recipient's user id."
+							},
+							"response": []
+						},
+						{
+							"name": "LINE image message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Line\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"cm.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an image as a LINE message (max 10 MB, png/jpeg/jpg)."
+							},
+							"response": []
+						},
+						{
+							"name": "LINE button template (rich card)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Line\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"header\": \"We are CM.com!\",\n                            \"text\": \"Visit our website or start a chat with one of our employees!\",\n                            \"media\": {\n                                \"mediaName\": \"cm.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            },\n                            \"defaultAction\": {\n                                \"action\": \"OpenUrl\",\n                                \"label\": \"Visit our website!\",\n                                \"url\": \"https://cm.com\"\n                            },\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"OpenUrl\",\n                                    \"label\": \"Visit our website!\",\n                                    \"url\": \"https://cm.com\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"I want to chat!\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a LINE button template rich card with a header, body, image, default tap action and up to four buttons."
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"description": "Folder for v1.0",
