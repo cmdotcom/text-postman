@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "5540dce1-a05e-4af8-9cb1-67d00bf731b0",
 		"name": "Business Messaging API",
-		"description": "A Postman collection of CM's Business Messaging API.\n\n\nOfficial API documentation: https://docs.cmtelecom.com/en/api/business-messaging-api/1.0/index/\n",
+		"description": "A Postman collection of CM's Business Messaging API.\n\n\nOfficial API documentation: https://developers.cm.com/messaging/\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -20,18 +20,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -51,18 +56,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"customGrouping\": \"{{Grouping}}\",\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"customGrouping\": \"{{Grouping}}\",\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -82,18 +92,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    },\n                    {\n                        \"number\": \"{{Recipient2}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \" SMS\"\n                ]\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"minimumNumberOfMessageParts\": 1,\n                \"maximumNumberOfMessageParts\": 8,\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    },\n                    {\n                        \"number\": \"{{Recipient2}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -113,18 +128,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"body\": {\n                    \"content\": \"Test\",\n                    \"type\": \"auto\"\n                },\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"SMS\"\n                ]\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -151,18 +171,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a WhatsApp message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ]\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a WhatsApp message\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ]\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -182,18 +207,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a WhatsApp message with a url https://www.cm.com\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ]\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a WhatsApp message with a url https://www.cm.com\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ]\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -213,18 +243,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a fallback message for multichannel capabilities\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"A text message with linebreaks\\n *bold* _italic_   ~strike~-through and ```some code``` formatting in a speech bubble.\"\n                        },\n                        {\n                            \"text\": \"Another speech bubble\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a fallback message for multichannel capabilities\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"A text message with linebreaks\\n *bold* _italic_   ~strike~-through and ```some code``` formatting in a speech bubble.\"\n                        },\n                        {\n                            \"text\": \"Another speech bubble\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -244,18 +279,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -275,18 +315,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example video\",\n                                \"mediaUri\": \"http://techslides.com/demos/sample-videos/small.mp4\",\n                                \"mimeType\": \"video/mp4\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example video\",\n                                \"mediaUri\": \"http://techslides.com/demos/sample-videos/small.mp4\",\n                                \"mimeType\": \"video/mp4\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -306,18 +351,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example document\",\n                                \"mediaUri\": \"http://mobitainmentdemo.co.za/MobiChatbot/Brochure.pdf\",\n                                \"mimeType\": \"document/pdf\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example document\",\n                                \"mediaUri\": \"http://mobitainmentdemo.co.za/MobiChatbot/Brochure.pdf\",\n                                \"mimeType\": \"document/pdf\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -337,18 +387,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaUri\": \"https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Example.ogg/Example.ogg.mp3\",\n                                \"mimeType\": \"audio/mp3\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaUri\": \"https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Example.ogg/Example.ogg.mp3\",\n                                \"mimeType\": \"audio/mp3\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -368,18 +423,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"location\": {\n                                \"latitude\": \"51.603802\",\n                                \"longitude\": \"4.770821\",\n                                \"label\": \"CM HQ\",\n                                \"searchQuery\": \"Konijnenberg 30\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"location\": {\n                                \"latitude\": \"51.603802\",\n                                \"longitude\": \"4.770821\",\n                                \"label\": \"CM HQ\",\n                                \"searchQuery\": \"Konijnenberg 30\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -399,18 +459,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"My contact information is:\"\n                        },\n                        {\n                            \"contacts\": [\n                                {\n                                    \"addresses\": [\n                                        {\n                                            \"city\": \"Menlo Park\",\n                                            \"country\": \"United States\",\n                                            \"country_code\": \"us\",\n                                            \"state\": \"CA\",\n                                            \"street\": \"1 Hacker Way\",\n                                            \"type\": \"HOME\",\n                                            \"zip\": \"94025\"\n                                        },\n                                        {\n                                            \"city\": \"Menlo Park\",\n                                            \"country\": \"United States\",\n                                            \"country_code\": \"us\",\n                                            \"state\": \"CA\",\n                                            \"street\": \"200 Jefferson Dr\",\n                                            \"type\": \"WORK\",\n                                            \"zip\": \"94025\"\n                                        }\n                                    ],\n                                    \"birthday\": \"2012-08-18\",\n                                    \"emails\": [\n                                        {\n                                            \"email\": \"test@fb.com\",\n                                            \"type\": \"WORK\"\n                                        },\n                                        {\n                                            \"email\": \"test@whatsapp.com\",\n                                            \"type\": \"WORK\"\n                                        }\n                                    ],\n                                    \"name\": {\n                                        \"formatted_name\": \"John Smith\",\n                                        \"last_name\": \"Smith\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"My contact information is:\"\n                        },\n                        {\n                            \"contacts\": [\n                                {\n                                    \"addresses\": [\n                                        {\n                                            \"city\": \"Menlo Park\",\n                                            \"country\": \"United States\",\n                                            \"country_code\": \"us\",\n                                            \"state\": \"CA\",\n                                            \"street\": \"1 Hacker Way\",\n                                            \"type\": \"HOME\",\n                                            \"zip\": \"94025\"\n                                        },\n                                        {\n                                            \"city\": \"Menlo Park\",\n                                            \"country\": \"United States\",\n                                            \"country_code\": \"us\",\n                                            \"state\": \"CA\",\n                                            \"street\": \"200 Jefferson Dr\",\n                                            \"type\": \"WORK\",\n                                            \"zip\": \"94025\"\n                                        }\n                                    ],\n                                    \"birthday\": \"2012-08-18\",\n                                    \"emails\": [\n                                        {\n                                            \"email\": \"test@fb.com\",\n                                            \"type\": \"WORK\"\n                                        },\n                                        {\n                                            \"email\": \"test@whatsapp.com\",\n                                            \"type\": \"WORK\"\n                                        }\n                                    ],\n                                    \"name\": {\n                                        \"formatted_name\": \"John Smith\",\n                                        \"last_name\": \"Smith\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -430,18 +495,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Test1\",\n                            \"header\": \"Header demo\"\n                        },\n                        {\n                            \"text\": \"Test2\",\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        },\n                        {\n                            \"text\": \"https://cm.nl\"\n                        },\n                        {\n                            \"text\": \"Test4\"\n                        },\n                        {\n                            \"text\": \"Test5\"\n                        },\n                        {\n                            \"text\": \"Test6\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Test1\",\n                            \"header\": \"Header demo\"\n                        },\n                        {\n                            \"text\": \"Test2\",\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        },\n                        {\n                            \"text\": \"https://cm.nl\"\n                        },\n                        {\n                            \"text\": \"Test4\"\n                        },\n                        {\n                            \"text\": \"Test5\"\n                        },\n                        {\n                            \"text\": \"Test6\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -461,18 +531,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"template\": {\n                                \"whatsapp\": {\n                                    \"namespace\": \"{{WA_Namespace}}\",\n                                    \"element_name\": \"ticket\",\n                                    \"language\": {\n                                        \"policy\": \"deterministic\",\n                                        \"code\": \"en\"\n                                    },\n                                    \"components\": [\n                                        {\n                                            \"type\": \"body\",\n                                            \"parameters\": [\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Name\"\n                                                },\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Order\"\n                                                },\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Order2\"\n                                                }\n                                            ]\n                                        }\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"template\": {\n                                \"whatsapp\": {\n                                    \"namespace\": \"{{WA_Namespace}}\",\n                                    \"element_name\": \"ticket\",\n                                    \"language\": {\n                                        \"policy\": \"deterministic\",\n                                        \"code\": \"en\"\n                                    },\n                                    \"components\": [\n                                        {\n                                            \"type\": \"body\",\n                                            \"parameters\": [\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Name\"\n                                                },\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Order\"\n                                                },\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Order2\"\n                                                }\n                                            ]\n                                        }\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -491,18 +566,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"template\": {\n                                \"whatsapp\": {\n                                    \"namespace\": \"{{WA_Namespace}}\",\n                                    \"element_name\": \"media_ticket\",\n                                    \"language\": {\n                                        \"policy\": \"deterministic\",\n                                        \"code\": \"en\"\n                                    },\n                                    \"components\": [\n                                        {\n                                            \"type\": \"header\",\n                                            \"parameters\": [\n                                                {\n                                                    \"type\": \"image\",\n                                                    \"media\": {\n                                                        \"mediaName\": \"Vind je dit wellicht leuk?\",\n                                                        \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                                        \"mimeType\": \"image/png\"\n                                                    }\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"type\": \"body\",\n                                            \"parameters\": [\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Name\"\n                                                },\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Dutch GP\"\n                                                }\n                                            ]\n                                        }\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"template\": {\n                                \"whatsapp\": {\n                                    \"namespace\": \"{{WA_Namespace}}\",\n                                    \"element_name\": \"media_ticket\",\n                                    \"language\": {\n                                        \"policy\": \"deterministic\",\n                                        \"code\": \"en\"\n                                    },\n                                    \"components\": [\n                                        {\n                                            \"type\": \"header\",\n                                            \"parameters\": [\n                                                {\n                                                    \"type\": \"image\",\n                                                    \"media\": {\n                                                        \"mediaName\": \"Vind je dit wellicht leuk?\",\n                                                        \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                                        \"mimeType\": \"image/png\"\n                                                    }\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"type\": \"body\",\n                                            \"parameters\": [\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Name\"\n                                                },\n                                                {\n                                                    \"type\": \"text\",\n                                                    \"text\": \"Dutch GP\"\n                                                }\n                                            ]\n                                        }\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -521,18 +601,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"SMS\",\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"cm logo\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is a SMS message\"\n                },\n                \"allowedChannels\": [\n                    \"SMS\",\n                    \"WhatsApp\"\n                ],\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"cm logo\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -552,18 +637,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"producttoken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ]\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"WhatsApp\"\n                ]\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -589,18 +679,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Text message for Viber\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Text message for Viber\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -619,18 +714,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Text message 1 for Viber\"\n                        },\n                        {\n                            \"text\": \"Text message 2 for Viber\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Text message 1 for Viber\"\n                        },\n                        {\n                            \"text\": \"Text message 2 for Viber\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -649,18 +749,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"messages\": {\n        \"authentication\": {\n            \"productToken\": \"{{ProductToken}}\"\n        },\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        },\n                        {\n                            \"text\": \"Text message for Viber\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        },\n                        {\n                            \"text\": \"Text message for Viber\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -679,18 +784,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"messages\": {\r\n        \"authentication\": {\r\n            \"productToken\": \"{{ProductToken}}\"\r\n        },\r\n        \"msg\": [\r\n            {\r\n                \"from\": \"{{Sender}}\",\r\n                \"to\": [\r\n                    {\r\n                        \"number\": \"{{Recipient}}\"\r\n                    }\r\n                ],\r\n                \"allowedChannels\": [\r\n                    \"Viber\"\r\n                ],\r\n                \"body\": {\r\n                    \"content\": \"SMS fallback content\"\r\n                },\r\n                \"richContent\": {\r\n                    \"conversation\": [\r\n                        {\r\n                            \"media\": {\r\n                            \t\"mediaName\": \"An example image\",\r\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\r\n                                \"mimeType\": \"image/png\"\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -709,18 +819,23 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"messages\": {\r\n        \"authentication\": {\r\n            \"productToken\": \"{{ProductToken}}\"\r\n        },\r\n        \"msg\": [\r\n            {\r\n                \"from\": \"{{Sender}}\",\r\n                \"to\": [\r\n                    {\r\n                        \"number\": \"{{Recipient}}\"\r\n                    }\r\n                ],\r\n                \"allowedChannels\": [\r\n                    \"Viber\"\r\n                ],\r\n                \"body\": {\r\n                    \"content\": \"SMS fallback content\"\r\n                },\r\n                \"richContent\": {\r\n                    \"conversation\": [\r\n                        {\r\n                            \"media\": {\r\n                            \t\"mediaName\": \"An example image\",\r\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\r\n                                \"mimeType\": \"image/png\"\r\n                            }\r\n                        }, {\r\n                        \t\"text\": \"Text message for Viber\"\r\n                        }\r\n                    ],\r\n                    \"suggestions\": [\r\n\t\t\t\t\t    {\r\n\t\t\t\t\t        \"action\": \"openurl\", \r\n\t\t\t\t\t        \"label\": \"Open URL\", \r\n\t\t\t\t\t        \"url\": \"https://cm.com\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Viber\"\n                ],\n                \"body\": {\n                    \"content\": \"SMS fallback content\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"An example image\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        },\n                        {\n                            \"text\": \"Text message for Viber\"\n                        }\n                    ],\n                    \"suggestions\": [\n                        {\n                            \"action\": \"OpenUrl\",\n                            \"label\": \"Open URL\",\n                            \"url\": \"https://cm.com\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
 								},
 								"url": {
-									"raw": "https://gw.cmtelecom.com/v1.0/message",
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
 									"protocol": "https",
 									"host": [
 										"gw",
-										"cmtelecom",
+										"messaging",
+										"cm",
 										"com"
 									],
 									"path": [
@@ -735,6 +850,838 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
+				},
+				{
+					"name": "RCS",
+					"item": [
+						{
+							"name": "RCS text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"RCS\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback text\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"A RCS text message\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain RCS text message. Falls back to the body content on devices without RCS."
+							},
+							"response": []
+						},
+						{
+							"name": "RCS image message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"RCS\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaHeight\": \"medium\",\n                                \"mediaName\": \"cm.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an image over RCS. mediaHeight can be small, medium or tall."
+							},
+							"response": []
+						},
+						{
+							"name": "RCS rich card with suggestions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"RCS\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"header\": \"CM.com wants to reach out to you.\",\n                            \"text\": \"We hope you like it!\",\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"OpenUrl\",\n                                    \"label\": \"Go to website\",\n                                    \"url\": \"https://www.cm.com\",\n                                    \"postbackdata\": \"Click on website\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an RCS rich card that combines a header, body text and up to four suggested replies/actions."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Apple Messages for Business",
+					"item": [
+						{
+							"name": "AMB text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Apple Messages for Business\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Be part of it.\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text Apple Messages for Business message. `from` is the Business Account ID, `to.number` is the Conversation ID."
+							},
+							"response": []
+						},
+						{
+							"name": "AMB list picker",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Apple Messages for Business\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Which product would you like more info about?\",\n                            \"listpicker\": {\n                                \"options\": [\n                                    {\n                                        \"label\": \"Communication Platform as a Service\"\n                                    },\n                                    {\n                                        \"label\": \"Mobile Marketing Cloud (MMC)\"\n                                    },\n                                    {\n                                        \"label\": \"Mobile Service Cloud (MSC)\"\n                                    },\n                                    {\n                                        \"label\": \"Conversational AI Cloud\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an Apple Messages for Business list picker so the user can pick from preset options."
+							},
+							"response": []
+						},
+						{
+							"name": "AMB OpenUrl with preview",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Apple Messages for Business\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Visit our website\",\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"OpenUrl\",\n                                    \"label\": \"CM.com - Be part of it.\",\n                                    \"url\": \"https://www.cm.com/products/talk/\",\n                                    \"media\": {\n                                        \"mediaName\": \"cm-com.png\",\n                                        \"mediaUri\": \"https://www.cm.com/cdn/cm/cm-com.png\",\n                                        \"mimeType\": \"image/png\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an Apple Messages for Business OpenUrl suggestion with an inline preview image."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Facebook Messenger",
+					"item": [
+						{
+							"name": "FBM text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Facebook Messenger\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"CM.com - Be part of it.\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text Facebook Messenger message. `from` is the Page ID, `to.number` is the recipient's PSID."
+							},
+							"response": []
+						},
+						{
+							"name": "FBM quick reply",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Facebook Messenger\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Hi, what can I do for you?\",\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Call me\",\n                                    \"postbackdata\": \"CALL\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\",\n                                    \"postbackdata\": \"EMAIL\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\",\n                                    \"postbackdata\": \"SMS\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Facebook Messenger message with quick reply buttons."
+							},
+							"response": []
+						},
+						{
+							"name": "FBM generic template (rich card)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Facebook Messenger\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"carousel\": {\n                                \"cards\": [\n                                    {\n                                        \"header\": \"CM.com - Be part of it.\",\n                                        \"text\": \"Want to know more about CM.com?\",\n                                        \"media\": {\n                                            \"mediaName\": \"cm.png\",\n                                            \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                            \"mimeType\": \"image/png\"\n                                        },\n                                        \"suggestions\": [\n                                            {\n                                                \"action\": \"Reply\",\n                                                \"label\": \"Give me more info\",\n                                                \"postbackdata\": \"INFO\"\n                                            },\n                                            {\n                                                \"action\": \"OpenUrl\",\n                                                \"label\": \"Visit CM.com\",\n                                                \"url\": \"https://www.cm.com/\"\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Facebook Messenger generic template (rich card) with a header, body, image and up to 3 buttons."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Instagram Messaging",
+					"item": [
+						{
+							"name": "Instagram text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Instagram\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"CM.com - Be part of it.\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text Instagram message. `from` is the Instagram Account ID, `to.number` is the recipient's IGSID."
+							},
+							"response": []
+						},
+						{
+							"name": "Instagram quick reply",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Instagram\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Hi, what can I do for you?\",\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Call me\",\n                                    \"postbackdata\": \"CALL\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\",\n                                    \"postbackdata\": \"EMAIL\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\",\n                                    \"postbackdata\": \"SMS\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an Instagram message with quick reply buttons. Only visible in the Instagram app, not the web client."
+							},
+							"response": []
+						},
+						{
+							"name": "Instagram rich card (generic template)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Instagram\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"header\": \"We are CM.com!\",\n                            \"text\": \"Visit our website or start a chat with one of our employees!\",\n                            \"media\": {\n                                \"mediaUri\": \"https://www.cm.com/cdn/web/en/small/connect-test.png\"\n                            },\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"OpenUrl\",\n                                    \"label\": \"Visit our website!\",\n                                    \"url\": \"https://cm.com\",\n                                    \"postbackdata\": \"VISIT_WEBSITE\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"I want to chat!\",\n                                    \"postbackdata\": \"HUMAN_AGENT\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an Instagram generic template (rich card). The `HUMAN_AGENT` postbackdata triggers the handover protocol if configured."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Google Business Messages",
+					"item": [
+						{
+							"name": "GBM text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Google Business Messages\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"CM.com - Be part of it.\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text Google Business Messages message. `from` is the Agent ID, `to.number` is the Conversation ID."
+							},
+							"response": []
+						},
+						{
+							"name": "GBM quick reply suggestions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Google Business Messages\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"Hi, what can I do for you?\",\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Call me\",\n                                    \"postbackdata\": \"call-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\",\n                                    \"postbackdata\": \"email-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\",\n                                    \"postbackdata\": \"send-me-sms\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Google Business Messages message with quick reply suggestions (max 13)."
+							},
+							"response": []
+						},
+						{
+							"name": "GBM rich card with reply suggestions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Google Business Messages\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"header\": \"Contact options\",\n                            \"text\": \"Hi, what can I do for you?\",\n                            \"media\": {\n                                \"mediaName\": \"connect.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/web/en/small/connect-test.png\",\n                                \"mimeType\": \"image/png\"\n                            },\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Call me\",\n                                    \"postbackdata\": \"call-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\",\n                                    \"postbackdata\": \"email-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\",\n                                    \"postbackdata\": \"send-me-sms\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Google Business Messages rich card with media and reply suggestions (max 4 suggestions per card)."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "LINE",
+					"item": [
+						{
+							"name": "LINE text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Line\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"CM.com - Be part of it.\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text LINE message. `from` is your LINE user id, `to.number` is the recipient's user id."
+							},
+							"response": []
+						},
+						{
+							"name": "LINE image message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Line\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"media\": {\n                                \"mediaName\": \"cm.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send an image as a LINE message (max 10 MB, png/jpeg/jpg)."
+							},
+							"response": []
+						},
+						{
+							"name": "LINE button template (rich card)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Line\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"header\": \"We are CM.com!\",\n                            \"text\": \"Visit our website or start a chat with one of our employees!\",\n                            \"media\": {\n                                \"mediaName\": \"cm.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            },\n                            \"defaultAction\": {\n                                \"action\": \"OpenUrl\",\n                                \"label\": \"Visit our website!\",\n                                \"url\": \"https://cm.com\"\n                            },\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"OpenUrl\",\n                                    \"label\": \"Visit our website!\",\n                                    \"url\": \"https://cm.com\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"I want to chat!\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a LINE button template rich card with a header, body, image, default tap action and up to four buttons."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Telegram",
+					"item": [
+						{
+							"name": "Telegram text message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Telegram Messenger\"\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"CM.com - Be part of it.\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a plain text Telegram message. `from` is your bot id, `to.number` is the recipient's chat id."
+							},
+							"response": []
+						},
+						{
+							"name": "Telegram text with image",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"allowedChannels\": [\n                    \"Telegram Messenger\"\n                ],\n                \"body\": {\n                    \"content\": \"\"\n                },\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"text\": \"CM.com - Be part of it.\",\n                            \"media\": {\n                                \"mediaName\": \"cm.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Telegram message with text and an image. Telegram displays them together as one entity, with the text below the image."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Mobile Push",
+					"item": [
+						{
+							"name": "Push text with SMS fallback",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"allowedChannels\": [\n                    \"MobilePush\",\n                    \"SMS\"\n                ],\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"This is the content of my push message.\"\n                },\n                \"appkey\": \"{{AppKey}}\"\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Mobile Push message with SMS fallback. `appkey` is the channel account id provided during onboarding."
+							},
+							"response": []
+						},
+						{
+							"name": "Push rich card (CMPush V2 SDK only)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json; charset=utf-8"
+									},
+									{
+										"key": "X-CM-PRODUCTTOKEN",
+										"value": "{{ProductToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"messages\": {\n        \"msg\": [\n            {\n                \"allowedChannels\": [\n                    \"MobilePush\"\n                ],\n                \"from\": \"{{Sender}}\",\n                \"to\": [\n                    {\n                        \"number\": \"{{Recipient}}\"\n                    }\n                ],\n                \"body\": {\n                    \"type\": \"auto\",\n                    \"content\": \"Fallback Text\"\n                },\n                \"appkey\": \"{{AppKey}}\",\n                \"richContent\": {\n                    \"conversation\": [\n                        {\n                            \"header\": \"Contact options\",\n                            \"text\": \"Hi, what can I do for you?\",\n                            \"media\": {\n                                \"mediaName\": \"cm.png\",\n                                \"mediaUri\": \"https://www.cm.com/cdn/cm/cm.png\",\n                                \"mimeType\": \"image/png\"\n                            },\n                            \"suggestions\": [\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Call me\",\n                                    \"postbackdata\": \"call-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Email me\",\n                                    \"postbackdata\": \"email-me\"\n                                },\n                                {\n                                    \"action\": \"Reply\",\n                                    \"label\": \"Send me an sms\",\n                                    \"postbackdata\": \"send-me-sms\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "https://gw.messaging.cm.com/v1.0/message",
+									"protocol": "https",
+									"host": [
+										"gw",
+										"messaging",
+										"cm",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"message"
+									]
+								},
+								"description": "Send a Mobile Push rich card with media and reply suggestions. Requires the CMPush V2 SDK on the receiving device."
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"description": "Folder for v1.0",
@@ -904,6 +1851,129 @@
 					"listen": "test",
 					"script": {
 						"id": "f65a0909-28e5-4943-a831-56d9426966a3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "sr-webhooks",
+			"item": [
+				{
+					"name": "SMS delivered (JSON)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messages\": {\n        \"msg\": {\n            \"received\": \"2026-05-29T10:15:23\",\n            \"to\": \"00447911123456\",\n            \"reference\": \"your_reference_A\",\n            \"status\": {\n                \"code\": 2,\n                \"errorCode\": 0,\n                \"errorDescription\": \"Message delivered\"\n            },\n            \"operator\": \"Vodafone UK\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "",
+						"description": "Delivery confirmation for an SMS (status code 2 = delivered). The reference matches what you set in the original outbound message."
+					},
+					"response": []
+				},
+				{
+					"name": "SMS failed - invalid number (JSON)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messages\": {\n        \"msg\": {\n            \"received\": \"2026-05-29T10:15:23\",\n            \"to\": \"0044791112345a\",\n            \"reference\": \"your_reference_B\",\n            \"status\": {\n                \"code\": 3,\n                \"errorCode\": 23,\n                \"errorDescription\": \"Message not delivered because of an incorrect recipient number\"\n            },\n            \"operator\": \"Vodafone UK\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "",
+						"description": "Failure SR for an SMS (status code 3 = failed) with standard error code 23 (invalid/blacklisted/barred recipient)."
+					},
+					"response": []
+				},
+				{
+					"name": "WhatsApp read (JSON)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"messages\": {\n        \"msg\": {\n            \"received\": \"2026-05-29T10:15:23\",\n            \"to\": \"00316012345678\",\n            \"reference\": \"your_reference_C\",\n            \"status\": {\n                \"code\": 4,\n                \"errorCode\": 0,\n                \"errorDescription\": \"Message read\"\n            },\n            \"operator\": \"WhatsApp\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "",
+						"description": "Read receipt for a WhatsApp message (status code 4 = read). Read is only emitted by channels other than SMS, and implies the message was also delivered."
+					},
+					"response": []
+				},
+				{
+					"name": "SMS delivered (XML)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml; charset=utf-8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<MESSAGES>\n\t<MSG RECEIVED=\"2026-05-29T10:15:23\">\n\t\t<TO>00447911123456</TO>\n\t\t<REFERENCE>your_reference_A</REFERENCE>\n\t\t<STATUS>\n\t\t\t<CODE>2</CODE>\n\t\t\t<ERRORCODE>0</ERRORCODE>\n\t\t\t<ERRORDESCRIPTION>Message delivered</ERRORDESCRIPTION>\n\t\t</STATUS>\n\t</MSG>\n</MESSAGES>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "",
+						"description": "Delivery confirmation in XML format. The status report webhook can be configured per account to deliver in JSON or XML."
+					},
+					"response": []
+				}
+			],
+			"description": "Our status report webhooks, also known as SRs or delivery reports.\n\nConfigure your application server as the request URL and send these messages to your server to emulate a status update coming from our server.\n\nStatus codes:\n- 0: accepted by the operator\n- 1: rejected by CM or the operator\n- 2: delivered\n- 3: failed (not, and will not be, delivered)\n- 4: read (channels other than SMS)\n\nStandard error codes (status.errorCode) are documented at https://developers.cm.com/messaging/docs/incoming-status-report",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
 						"type": "text/javascript",
 						"exec": [
 							""
